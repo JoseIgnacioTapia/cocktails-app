@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../app/store';
 
 import Loading from './Loading';
+import Cocktail from './Cocktail';
 
 function CocktailList(): JSX.Element {
   const cocktails = useSelector(
@@ -21,8 +22,22 @@ function CocktailList(): JSX.Element {
   }
 
   return (
-    <div>
-      <h2>CocktailList</h2>
+    <div className="section">
+      <h2 className="section-title">Cocktails</h2>
+      <div className="cocktails-center">
+        {cocktails.map(({ id, name, image, info, glass }) => {
+          return (
+            <Cocktail
+              key={id}
+              id={id}
+              name={name}
+              image={image}
+              info={info}
+              glass={glass}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

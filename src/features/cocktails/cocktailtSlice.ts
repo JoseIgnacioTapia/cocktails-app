@@ -62,7 +62,11 @@ const searchByTermRejectedReducer: CaseReducer<
 export const cocktailSlice = createSlice({
   name: 'cocktails',
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchTerm: (state: CocktailState, action: PayloadAction<string>) => {
+      state.searchTerm = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(searchByTerm.pending, (state: CocktailState) => {
