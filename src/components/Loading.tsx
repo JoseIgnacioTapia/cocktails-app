@@ -1,4 +1,4 @@
-import Cocktail from './Cocktail';
+import Cocktail from './CocktailDetail';
 
 function Loading(): JSX.Element {
   return <div className="loader">Loading</div>;

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../app/store';
 
 import Loading from './Loading';
-import Cocktail from './Cocktail';
+import CocktailDetail from './CocktailDetail';
 
 function CocktailList(): JSX.Element {
   const cocktails = useSelector(
@@ -27,7 +27,7 @@ function CocktailList(): JSX.Element {
       <div className="cocktails-center">
         {cocktails.map(({ id, name, image, info, glass }) => {
           return (
-            <Cocktail
+            <CocktailDetail
               key={id}
               id={id}
               name={name}

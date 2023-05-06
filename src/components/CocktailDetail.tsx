@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Cocktail } from '../features/cocktails/cocktailtSlice';
 
-function Cocktail({ image, name, id, info, glass }: Cocktail): JSX.Element {
+function CocktailDetail({
+  image,
+  name,
+  id,
+  info,
+  glass,
+}: Cocktail): JSX.Element {
   return (
     <article className="cocktail">
       <div className="img-container">
@@ -19,4 +25,4 @@ function Cocktail({ image, name, id, info, glass }: Cocktail): JSX.Element {
   );
 }
 
-export default Cocktail;
+export default CocktailDetail;
