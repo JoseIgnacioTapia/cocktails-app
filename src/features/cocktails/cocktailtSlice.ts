@@ -34,14 +34,14 @@ const url: string = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 // Search by term
 export const searchByTerm = createAsyncThunk(
   'cocktails/searchByTerm',
-  async (term: string, thunkAPI) => {
+  async (term: string = initialState.searchTerm, thunkAPI) => {
     try {
       const response = await fetch(`${url}${term}`);
       const data = await response.json();
 
-      const transformedData = data.drinks.map((cocktail: any) =>
-        transformCocktail(cocktail)
-      );
+      const transformedData = data.drinks
+        ? data.drinks.map((cocktail: any) => transformCocktail(cocktail))
+        : initialState.cocktails;
 
       return transformedData;
     } catch (error) {
