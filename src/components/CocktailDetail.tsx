@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Cocktail } from '../features/cocktails/cocktailtSlice';
 
-function CocktailDetail({
-  image,
-  name,
-  id,
-  info,
-  glass,
-}: Cocktail): JSX.Element {
+function CocktailDetail({ image, name, info, glass }: Cocktail): JSX.Element {
   return (
     <article className="cocktail">
       <div className="img-container">
@@ -17,7 +11,7 @@ function CocktailDetail({
         <h3>{name}</h3>
         <h4>{glass}</h4>
         <p>{info}</p>
-        <Link to={`/cocktail/${id}`} className="btn btn-primary btn-details">
+        <Link to={`/cocktail/${name}`} className="btn btn-primary btn-details">
           details
         </Link>
       </div>

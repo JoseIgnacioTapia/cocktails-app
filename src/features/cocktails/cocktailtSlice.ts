@@ -13,6 +13,9 @@ export interface Cocktail {
   image: string;
   info: string;
   glass: string;
+  category?: string;
+  instructions?: string;
+  ingredients?: string[];
 }
 
 interface CocktailState {
@@ -53,10 +56,10 @@ export const searchByTerm = createAsyncThunk(
 
 const searchByTermRejectedReducer: CaseReducer<
   CocktailState,
-  PayloadAction<Error>
-> = (state, action) => {
+  PayloadAction<Error | null>
+> = state => {
   state.loading = false;
-  state.error = action.payload;
+  state.error = new Error('Cocktail does not found');
 };
 
 export const cocktailSlice = createSlice({
