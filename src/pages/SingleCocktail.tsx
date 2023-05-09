@@ -15,7 +15,7 @@ function SingleCocktail(): JSX.Element {
 
   const cocktail = useSelector((state: RootState) => state.cocktails.cocktails);
   const loading = useSelector((state: RootState) => state.cocktails.loading);
-  const error = useSelector((state: RootState) => state.cocktails.error);
+  // const error = useSelector((state: RootState) => state.cocktails.error);
 
   const dispatch = useDispatch<AppDispatch>();
 

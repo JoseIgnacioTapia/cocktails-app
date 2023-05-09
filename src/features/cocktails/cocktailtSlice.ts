@@ -37,7 +37,7 @@ const url: string = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 // Search by term
 export const searchByTerm = createAsyncThunk(
   'cocktails/searchByTerm',
-  async (term: string = initialState.searchTerm, thunkAPI) => {
+  async (term: string = initialState.searchTerm) => {
     try {
       const response = await fetch(`${url}${term}`);
       const data = await response.json();
